@@ -31,5 +31,3 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
-
-vim.cmd[[colorscheme tokyonight-night]]
