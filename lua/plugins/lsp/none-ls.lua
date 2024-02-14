@@ -11,10 +11,9 @@ return {
         local null_ls = require("null-ls")
 
         local null_ls_utils = require("null-ls.utils")
-        
+
         mason_null_ls.setup({
             ensure_installed = {
-                "pylint", -- python linter
                 "flake8", -- python linter
                 "eslint_d", -- js linter
                 "trivy", -- general purpose linter
@@ -26,7 +25,6 @@ return {
         null_ls.setup({
             root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
             sources = {
-                diagnostics.pylint,
                 diagnostics.flake8,
                 diagnostics.estlint_d.with({
                     condition = function()

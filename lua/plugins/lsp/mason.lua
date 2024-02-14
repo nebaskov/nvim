@@ -47,7 +47,6 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
-                "pylint", -- python linter
                 "flake8", -- python linter
                 "eslint_d", -- js linter
                 "trivy", -- general purpose linter
