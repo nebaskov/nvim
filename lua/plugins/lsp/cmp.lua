@@ -9,6 +9,19 @@ return {
         local lsp_zero = require('lsp-zero')
 
         lsp_zero.preset("recommended")
+        lsp_zero.on_attach(function (client, bufnr)
+            local opts = {buffer = bufnr, remap = false}
+            vim.keymap.set("n", "<leader>vd", function () vim.diagnostic.open_float() end, opts)
+        end)
+
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            update_in_insert = false,
+            underline = true,
+            severity_sort = false,
+            float = true
+        })
 
         lsp_zero.extend_cmp()
 
